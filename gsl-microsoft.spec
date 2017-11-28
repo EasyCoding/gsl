@@ -14,6 +14,7 @@ Release: 1.%{date}git%{shortcommit0}%{?dist}
 License: MIT
 URL: https://github.com/Microsoft/GSL
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+BuildArch: noarch
 
 %description
 Header-only %{summary}.
@@ -33,7 +34,7 @@ Summary: Development files for %{name}
 %install
 # Installing headers...
 mkdir -p "%{buildroot}%{_includedir}/%{name}/gsl"
-find include/gsl -maxdepth 1 -type f -name "*" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name}/gsl \;
+cp -a include/gsl %{buildroot}%{_includedir}/%{name}
 
 %files devel
 %doc README.md CONTRIBUTING.md
