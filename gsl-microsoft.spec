@@ -16,7 +16,7 @@ URL: https://github.com/Microsoft/GSL
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 %description
-Header-only %{release}.
+Header-only %{summary}.
 
 %package devel
 Summary: Development files for %{name}
