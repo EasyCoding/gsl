@@ -37,4 +37,7 @@ find include/gsl -maxdepth 1 -type f -name "*" -exec install -m 0644 -p '{}' %{b
 %{_includedir}/%{name}
 
 %changelog
+* Tue Nov 28 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20171014git1c95f94
+- Initial SPEC release.
+
  
