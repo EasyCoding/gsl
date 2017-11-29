@@ -6,7 +6,7 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global date 20171014
 
-Name: gsl-microsoft
+Name: guidelines-support-library
 Summary: Guidelines Support Library
 Version: 0
 Release: 1.%{date}git%{shortcommit0}%{?dist}
