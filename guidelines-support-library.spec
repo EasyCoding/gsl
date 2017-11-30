@@ -1,6 +1,3 @@
-# Disable debug package...
-%global debug_package %{nil}
-
 # Set Git revision of library...
 %global commit0 1c95f9436eae69c9b9315911ef6aa210df7d1e31
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
@@ -21,6 +18,7 @@ Header-only %{summary}.
 
 %package devel
 Summary: Development files for %{name}
+Provides: %{name}-static = %{version}-%{release}
 
 %description devel
 %{summary}.
