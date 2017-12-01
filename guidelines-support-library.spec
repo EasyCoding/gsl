@@ -24,7 +24,7 @@ Provides: %{name}-static = %{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n GSL-%{commit0} -p1
+%autosetup -n GSL-%{commit0}
 
 %build
 # Nothing to build. Header-only library.
@@ -41,4 +41,4 @@ cp -a include/gsl %{buildroot}%{_includedir}/%{name}
 
 %changelog
 * Tue Nov 28 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20171014git1c95f94
-- Initial SPEC release. 
+- Initial SPEC release.
