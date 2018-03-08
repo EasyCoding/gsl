@@ -6,7 +6,7 @@
 Name: guidelines-support-library
 Summary: Guidelines Support Library
 Version: 0
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 
 License: MIT
 URL: https://github.com/Microsoft/GSL
@@ -40,5 +40,8 @@ cp -a include/gsl %{buildroot}%{_includedir}/%{name}
 %{_includedir}/%{name}
 
 %changelog
+* Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0-2.20171014git1c95f94
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Tue Nov 28 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20171014git1c95f94
 - Initial SPEC release.
