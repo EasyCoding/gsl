@@ -1,16 +1,11 @@
-# Set Git revision of library...
-%global commit0 c9e423d7cf2afb88672e31f55e4b30c53be7aae3
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20180305
-
 Name: guidelines-support-library
 Summary: Guidelines Support Library
-Version: 0
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Version: 1.0.0
+Release: 1%{?dist}
 
 License: MIT
 URL: https://github.com/Microsoft/GSL
-Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildArch: noarch
 
 %description
@@ -24,7 +19,7 @@ Provides: %{name}-static = %{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n GSL-%{commit0}
+%autosetup -n GSL-%{version}
 
 %build
 # Nothing to build. Header-only library.
@@ -40,6 +35,9 @@ cp -a include/gsl %{buildroot}%{_includedir}/%{name}
 %{_includedir}/%{name}
 
 %changelog
+* Fri Jun 29 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.0.0-1
+- Updated to version 1.0.0.
+
 * Thu Mar 08 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 0-3.20180305gitc9e423d
 - Updated to latest snapshot.
 
