@@ -1,7 +1,7 @@
 Name: guidelines-support-library
 Summary: Guidelines Support Library
 Version: 1.0.0
-Release: 4%{?dist}
+Release: 5%{?dist}
 
 License: MIT
 URL: https://github.com/Microsoft/GSL
@@ -35,6 +35,9 @@ cp -a include/gsl %{buildroot}%{_includedir}/%{name}
 %{_includedir}/%{name}
 
 %changelog
+* Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
