@@ -1,12 +1,17 @@
 Name: guidelines-support-library
-Summary: Guidelines Support Library
-Version: 1.0.0
-Release: 5%{?dist}
+Version: 2.1.0
+Release: 1%{?dist}
 
 License: MIT
 URL: https://github.com/Microsoft/GSL
-Source0: %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Summary: Guidelines Support Library
+Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildArch: noarch
+
+BuildRequires: ninja-build
+BuildRequires: gcc-c++
+BuildRequires: cmake
+BuildRequires: gcc
 
 %description
 Header-only %{summary}.
@@ -20,21 +25,29 @@ Provides: %{name}-static = %{version}-%{release}
 
 %prep
 %autosetup -n GSL-%{version}
+mkdir -p %{_target_platform}
 
 %build
-# Nothing to build. Header-only library.
+pushd %{_target_platform}
+    %cmake -G Ninja \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DGSL_TEST:BOOL=OFF \
+    ..
+popd
+%ninja_build -C %{_target_platform}
 
 %install
-# Installing headers...
-mkdir -p "%{buildroot}%{_includedir}/%{name}/gsl"
-cp -a include/gsl %{buildroot}%{_includedir}/%{name}
+%ninja_install -C %{_target_platform}
 
 %files devel
 %doc README.md CONTRIBUTING.md
 %license LICENSE ThirdPartyNotices.txt
-%{_includedir}/%{name}
+%{_includedir}/gsl/
 
 %changelog
+* Mon Feb 03 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 2.1.0-1
+- Updated to version 2.1.0.
+
 * Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
