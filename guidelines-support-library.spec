@@ -22,7 +22,7 @@ Header-only %{summary}.
 
 %package devel
 Summary: Development files for %{name}
-Provides: %{name}-static = %{version}-%{release}
+Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 
 %description devel
 %{summary}.
