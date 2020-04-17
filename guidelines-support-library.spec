@@ -6,6 +6,10 @@ License: MIT
 URL: https://github.com/Microsoft/GSL
 Summary: Guidelines Support Library
 Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+
+# https://github.com/microsoft/GSL/pull/867
+Patch100: %{name}-cmake-fix.patch
+
 BuildArch: noarch
 
 BuildRequires: ninja-build
@@ -24,7 +28,7 @@ Provides: %{name}-static = %{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n GSL-%{version}
+%autosetup -n GSL-%{version} -p1
 mkdir -p %{_target_platform}
 
 %build
@@ -42,6 +46,7 @@ popd
 %files devel
 %doc README.md CONTRIBUTING.md
 %license LICENSE ThirdPartyNotices.txt
+%{_datadir}/cmake/Microsoft.GSL/
 %{_includedir}/gsl/
 
 %changelog
