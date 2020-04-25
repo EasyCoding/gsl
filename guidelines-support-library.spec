@@ -7,9 +7,6 @@ URL: https://github.com/Microsoft/GSL
 Summary: Guidelines Support Library
 Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
-# https://github.com/microsoft/GSL/pull/867
-Patch100: %{name}-cmake-fix.patch
-
 BuildArch: noarch
 
 BuildRequires: ninja-build
