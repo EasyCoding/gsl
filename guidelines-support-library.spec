@@ -1,5 +1,5 @@
 Name: guidelines-support-library
-Version: 3.0.0
+Version: 3.0.1
 Release: 1%{?dist}
 
 License: MIT
@@ -47,6 +47,9 @@ popd
 %{_includedir}/gsl/
 
 %changelog
+* Sat Apr 25 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 3.0.1-1
+- Updated to version 3.0.1.
+
 * Fri Apr 17 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 3.0.0-1
 - Updated to version 3.0.0.
 
