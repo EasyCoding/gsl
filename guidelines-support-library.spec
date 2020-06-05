@@ -27,7 +27,6 @@ Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 %prep
 %autosetup -n GSL-%{version} -p1
 mkdir -p %{_target_platform}
-sed -e '/-Werror/d' -i tests/CMakeLists.txt
 
 %build
 pushd %{_target_platform}
