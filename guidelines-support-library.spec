@@ -13,7 +13,6 @@ BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
-BuildRequires: git
 
 %description
 Header-only %{summary}.
@@ -34,15 +33,10 @@ sed -e '/-Werror/d' -i tests/CMakeLists.txt
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DGSL_TEST:BOOL=ON \
+    -DGSL_TEST:BOOL=OFF \
     ..
 popd
 %ninja_build -C %{_target_platform}
-
-%check
-pushd %{_target_platform}
-    ctest --output-on-failure
-popd
 
 %install
 %ninja_install -C %{_target_platform}
