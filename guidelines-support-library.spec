@@ -13,6 +13,7 @@ BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
+BuildRequires: git
 
 %description
 Header-only %{summary}.
