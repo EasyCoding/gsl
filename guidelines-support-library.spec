@@ -27,15 +27,21 @@ Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 %prep
 %autosetup -n GSL-%{version} -p1
 mkdir -p %{_target_platform}
+sed -e '/-Werror/d' -i tests/CMakeLists.txt
 
 %build
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DGSL_TEST:BOOL=OFF \
+    -DGSL_TEST:BOOL=ON \
     ..
 popd
 %ninja_build -C %{_target_platform}
+
+%check
+pushd %{_target_platform}
+    ctest --output-on-failure
+popd
 
 %install
 %ninja_install -C %{_target_platform}
