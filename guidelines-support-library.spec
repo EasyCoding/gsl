@@ -14,6 +14,9 @@ BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
 
+# https://github.com/microsoft/GSL/pull/893
+Patch100: %{name}-fix-noarch.patch
+
 %description
 Header-only %{summary}.
 
