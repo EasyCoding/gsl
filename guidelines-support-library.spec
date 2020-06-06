@@ -1,6 +1,6 @@
 Name: guidelines-support-library
 Version: 3.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: MIT
 URL: https://github.com/Microsoft/GSL
@@ -50,6 +50,9 @@ popd
 %{_includedir}/gsl/
 
 %changelog
+* Sat Jun 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.0-2
+- Added patch with architecture independent fixes.
+
 * Fri Jun 05 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.0-1
 - Updated to version 3.1.0.
 
