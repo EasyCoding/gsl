@@ -2,7 +2,7 @@
 
 Name: guidelines-support-library
 Version: 3.1.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 
 License: MIT
 URL: https://github.com/Microsoft/GSL
@@ -48,6 +48,9 @@ Provides: %{name}-static = %{?epoch:%{epoch}:}%{version}-%{release}
 %{_includedir}/gsl/
 
 %changelog
+* Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 3.1.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 3.1.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
